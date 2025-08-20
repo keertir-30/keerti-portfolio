@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keerti - Data Analyst Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9ff;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .education-item h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .education-item p {
+            color: #666;
+            margin-bottom: 3px;
+        }
+
+        .score {
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.05);
+        }
+
+        .soft-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .soft-skill {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 2px solid #bbdefb;
+        }
+
+        .contact-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .contact-section h2 {
+            color: #667eea;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .about-section {
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Keerti Yargol</h1>
+            <p>Aspiring Data Analyst | MCA Student | Problem Solver</p>
+        </header>
+
+        <div class="main-content">
+            <div class="card">
+                <h2>🎓 Education</h2>
+                <div class="education-item">
+                    <h3>Master of Computer Applications (MCA)</h3>
+                    <p>Currently pursuing - 4th Semester</p>
+                    <p class="score">In Progress</p>
+                </div>
+                <div class="education-item">
+                    <h3>Bachelor of Computer Applications (BCA)</h3>
+                    <p>Karnataka, India</p>
+                    <p class="score">CGPA: 8.65</p>
+                </div>
+                <div class="education-item">
+                    <h3>Pre-University Course (PUC)</h3>
+                    <p>Karnataka, India</p>
+                    <p class="score">Score: 73.33%</p>
+                </div>
+                <div class="education-item">
+                    <h3>Secondary School Leaving Certificate (SSLC)</h3>
+                    <p>Karnataka, India</p>
+                    <p class="score">Score: 84.96%</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>🛠️ Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">SQL</div>
+                    <div class="skill-item">Power BI</div>
+                    <div class="skill-item">Advanced Excel</div>
+                </div>
+                
+                <h3 style="color: #667eea; margin: 20px 0 10px 0;">🏆 Certifications</h3>
+                <div style="background: #f0f8ff; padding: 15px; border-radius: 8px; border-left: 4px solid #667eea;">
+                    <p style="font-weight: 600; color: #333;">Cloud Foundation Certificate</p>
+                </div>
+
+                <h3 style="color: #667eea; margin: 20px 0 10px 0;">💡 Soft Skills</h3>
+                <div class="soft-skills">
+                    <span class="soft-skill">Team Player</span>
+                    <span class="soft-skill">Problem Solver</span>
+                    <span class="soft-skill">Effective Communicator</span>
+                    <span class="soft-skill">Analytical Thinking</span>
+                </div>
+            </div>
+
+            <div class="card about-section">
+                <h2>👋 About Me</h2>
+                <p>
+                    I'm Keerti, an enthusiastic MCA student with a passion for data analysis and problem-solving. 
+                    With strong technical skills in Python, SQL, Power BI, and Advanced Excel, I'm dedicated to 
+                    transforming raw data into meaningful insights. My journey in computer applications, combined 
+                    with my cloud foundation certification, has equipped me with the knowledge to tackle complex 
+                    data challenges. I thrive in collaborative environments and believe that effective communication 
+                    is key to successful data-driven decision making.
+                </p>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2>📱 Get In Touch</h2>
+            <div class="contact-info">
+                <a href="https://wa.me/917795470284" class="contact-item" target="_blank">
+                    <span class="icon">📱</span>
+                    WhatsApp: +91 77954 70284
+                </a>
+                <a href="https://instagram.com/keertiyargol" class="contact-item" target="_blank">
+                    <span class="icon">📷</span>
+                    Instagram: @keertiyargol
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
